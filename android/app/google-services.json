@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "752092507590",
+    "project_id": "asaph-church",
+    "storage_bucket": "asaph-church.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:752092507590:android:c8980161dab518b37c96c7",
+        "android_client_info": {
+          "package_name": "com.example.asaph_church"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "752092507590-0fn30e61touhbls63b1bjv49gkuht14n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.asaph_church",
+            "certificate_hash": "0db7a39fe32ffe436056e4d86bcf9a17a16fc0fe"
+          }
+        },
+        {
+          "client_id": "752092507590-ismgvlrqkk8r7obd1hkmb8sg1duedski.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAluz7B3_vMRnXp6l4yVHs01yqfxGA9-rQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "752092507590-ismgvlrqkk8r7obd1hkmb8sg1duedski.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
