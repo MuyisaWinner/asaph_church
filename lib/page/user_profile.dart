@@ -21,7 +21,9 @@ class _UserProfileState extends State<UserProfile> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CircleAvatar(backgroundImage: NetworkImage(user!.photoURL!),),
+            CircleAvatar(
+              radius: 50,
+              backgroundImage: NetworkImage(user!.photoURL!),),
             
 
             Text('name'),
