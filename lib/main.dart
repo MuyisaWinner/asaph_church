@@ -1,72 +1,41 @@
-import 'dart:async';
 
-import 'package:asaph_church/page/splashView.dart';
+import 'package:asaph_church/services/authentification.dart';
+import 'package:asaph_church/services/control.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(providers: [
+      StreamProvider.value(
+        initialData: null,
+        value: AuthServices().user,
+      ),
+      
+    ],
+    child: const App() ,)
+  );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch : Colors.blue,
+        primaryColor: Colors.blue,
+        
       ),
-      home: const SplashScreen(),
+      home: const Control(),
     );
   }
 }
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
-
-  @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    session();
-
-    super.initState();
-  }
-
-  void session() {
-    Timer(
-      Duration(seconds: 5),
-      () {
-        Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => const Splash()));
-      },
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Image(image: AssetImage('assets/image/logo1.png'), width: 100,),
-
-            SizedBox(height: 60,),
-            CircularProgressIndicator()
-          ],
-        ),
-      ),
-    );
-  }
-}
